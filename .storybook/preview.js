@@ -1,3 +1,5 @@
+import Center from "../src/components/Center/Center";
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -9,6 +11,13 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <Center>
+        <Story />
+      </Center>
+    ),
+  ],
 };
 
 export default preview;
