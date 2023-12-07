@@ -1,4 +1,4 @@
-import Center from "../src/components/Center/Center";
+import { Box, CSSReset, ChakraProvider } from "@chakra-ui/react";
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -13,9 +13,12 @@ const preview = {
   },
   decorators: [
     (Story) => (
-      <Center>
-        <Story />
-      </Center>
+      <ChakraProvider>
+        <CSSReset />
+        <Box m="4">
+          <Story />
+        </Box>
+      </ChakraProvider>
     ),
   ],
 };
